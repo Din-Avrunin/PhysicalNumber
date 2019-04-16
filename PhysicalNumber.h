@@ -11,7 +11,7 @@ namespace ariel
     class PhysicalNumber
     {
         private:
-        PhysicalNumber convert(const PhysicalNumber &pn) const;
+        PhysicalNumber& convert(const PhysicalNumber &pn) const;
         // string PhysicalNumber::getUnitName(enum ariel::Unit::Type type) const;
 
         public:
@@ -25,16 +25,15 @@ namespace ariel
         PhysicalNumber();
         ~PhysicalNumber();
 
-        PhysicalNumber operator+(const PhysicalNumber &pn) const;
+        PhysicalNumber operator+( PhysicalNumber const & pn);
         PhysicalNumber& operator+=(const PhysicalNumber &pn);
-        PhysicalNumber operator+() const;
-        PhysicalNumber& operator++(int);
+        const PhysicalNumber& operator++(int);
         PhysicalNumber& operator++();
         
         PhysicalNumber operator-(const PhysicalNumber &pn) const;
         PhysicalNumber& operator-=(const PhysicalNumber &pn);
         PhysicalNumber operator-() const;
-        PhysicalNumber& operator--(int);
+        const PhysicalNumber& operator--(int);
         PhysicalNumber& operator--();
         
     

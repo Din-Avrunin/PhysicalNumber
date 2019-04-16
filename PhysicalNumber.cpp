@@ -23,7 +23,7 @@ using namespace ariel;
         PhysicalNumber::~PhysicalNumber(){
 
         }
-        PhysicalNumber PhysicalNumber::operator+(const PhysicalNumber& pn) const
+        PhysicalNumber PhysicalNumber::operator+(const PhysicalNumber& pn)
         {
           
           PhysicalNumber newPN; 
@@ -52,6 +52,7 @@ using namespace ariel;
             return newPN; // are we missing a delete once this is over?
         }
 
+
         PhysicalNumber& PhysicalNumber::operator+=(PhysicalNumber const & pn)
         {
             PhysicalNumber newPN;
@@ -70,25 +71,20 @@ using namespace ariel;
            }
            // delete (newPN) ????
            return *this;
-        }
-        //TODO: need to complele code: and also, do i need & here?
-        PhysicalNumber PhysicalNumber::operator+() const
-        {
-            return *this;
-        }    
+        }   
 
         PhysicalNumber& PhysicalNumber::operator++()
         {
-            number++;
+            this->number++;
             return *this;
         }
-        PhysicalNumber &PhysicalNumber::operator++(int) 
+        const PhysicalNumber& PhysicalNumber::operator++(int) 
         {
             PhysicalNumber q;
-            q.number=number+1;
+            q.number=this->number+1;
             q.unit=unit;
            
-            return q ;
+            return q;
         }
         PhysicalNumber PhysicalNumber::operator-(const PhysicalNumber& pn) const
         {
@@ -140,14 +136,14 @@ using namespace ariel;
         }
         PhysicalNumber& PhysicalNumber::operator--()
         {
-            this->number=this->number-1;
+            this->number--;
             return *this;
         }
-        PhysicalNumber& PhysicalNumber::operator--(int)
+        const PhysicalNumber& PhysicalNumber::operator--(int)
         {
             PhysicalNumber q;
-            q.number=number-1;
-            q.unit=unit;
+            q.number=this->number-1;
+            q.unit=this->unit;
             
             return q;
         }
@@ -247,7 +243,7 @@ using namespace ariel;
         }
 
 
-   PhysicalNumber PhysicalNumber::convert(const PhysicalNumber &pn) const
+   PhysicalNumber& PhysicalNumber::convert(const PhysicalNumber &pn) const
     {
             // need to do isSame()?
         PhysicalNumber newPN;
