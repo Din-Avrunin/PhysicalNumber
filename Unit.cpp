@@ -2,7 +2,7 @@
 #include "Unit.h"
 #include <stdexcept>
 using namespace ariel;
-
+// public:
    bool Unit::isSame(const Unit &unit) const{
      if (this->type==unit.type)
 

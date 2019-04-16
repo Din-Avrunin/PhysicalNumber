@@ -11,14 +11,11 @@ using namespace ariel;
 
         PhysicalNumber::PhysicalNumber()
         {
-            
             number = 0;
             unit.type = Unit::KM;
         }
         PhysicalNumber::PhysicalNumber(double number,Unit::Type type) // unit is object of Unit.h class
         {
-            if (number < 0) 
-            throw "exception at constructor, number cant be < 0";
             this->number=number;
             this->unit.type=type;
             
@@ -31,7 +28,7 @@ using namespace ariel;
           
           PhysicalNumber newPN; 
           
-            if(unit.ariel::Unit::isSame(pn.unit)){
+            if(unit.isSame(pn.unit)){
                  
             newPN.number=this->number+pn.number;
             newPN.unit=this->unit;
@@ -250,7 +247,7 @@ using namespace ariel;
         }
 
 
-   PhysicalNumber PhysicalNumber::convert(const PhysicalNumber &pn) const
+   PhysicalNumber& PhysicalNumber::convert(const PhysicalNumber &pn) const
     {
             // need to do isSame()?
         PhysicalNumber newPN;

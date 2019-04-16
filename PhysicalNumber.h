@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "Unit.h"
+
         
 namespace ariel
 {
@@ -10,7 +11,7 @@ namespace ariel
     class PhysicalNumber
     {
         private:
-        PhysicalNumber convert(const PhysicalNumber &pn) const;
+        PhysicalNumber& convert(const PhysicalNumber &pn) const;
         // string PhysicalNumber::getUnitName(enum ariel::Unit::Type type) const;
 
         public:
