@@ -116,10 +116,13 @@ bool PhysicalNumber::isSameGroup(const Unit &otherUnit) const
             number++;
             return *this;
         }
-        PhysicalNumber PhysicalNumber::operator++(int) 
+        const PhysicalNumber PhysicalNumber::operator++(int) 
         {
-            number++;
-            return *this;
+            PhysicalNumber q;
+            q.number=this->number+1;
+            q.unit=unit;
+           
+            return q;
         }
         PhysicalNumber PhysicalNumber::operator-(const PhysicalNumber& pn) const
         {
@@ -178,10 +181,13 @@ bool PhysicalNumber::isSameGroup(const Unit &otherUnit) const
             number--;
             return *this;
         }
-        PhysicalNumber PhysicalNumber::operator--(int)
+        const PhysicalNumber PhysicalNumber::operator--(int)
         {
-            number--;
-            return *this;
+            PhysicalNumber q;
+            q.number=this->number-1;
+            q.unit=this->unit;
+            
+            return q;
         }
         
         bool PhysicalNumber::operator<(const PhysicalNumber& pn) const
