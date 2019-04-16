@@ -1,4 +1,5 @@
 
+#pragma once
 
 #include "PhysicalNumber.h"
 #include "Unit.cpp"
@@ -86,8 +87,11 @@ using namespace ariel;
         }
         PhysicalNumber &PhysicalNumber::operator++(int) 
         {
-           number++;
-            return *this;
+            PhysicalNumber q;
+            q.number=number+1;
+            q.unit=unit;
+           
+            return q ;
         }
         PhysicalNumber PhysicalNumber::operator-(const PhysicalNumber& pn) const
         {
@@ -144,8 +148,11 @@ using namespace ariel;
         }
         PhysicalNumber& PhysicalNumber::operator--(int)
         {
-            number--;
-            return *this;
+            PhysicalNumber q;
+            q.number=number-1;
+            q.unit=unit;
+            
+            return q;
         }
         
         bool PhysicalNumber::operator<(const PhysicalNumber& pn) const
