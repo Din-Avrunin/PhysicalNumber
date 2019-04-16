@@ -241,7 +241,7 @@ using namespace ariel;
             else 
                 throw "the physical numbers are not the same dimension at function < \n";
         }
-m
+
 
    PhysicalNumber PhysicalNumber::convert(const PhysicalNumber &pn) const
     {
