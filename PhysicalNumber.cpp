@@ -1,6 +1,4 @@
 
-#pragma once
-
 #include "PhysicalNumber.h"
 #include "Unit.cpp"
 #include <string>
@@ -78,7 +76,7 @@ using namespace ariel;
             this->number++;
             return *this;
         }
-        const PhysicalNumber& PhysicalNumber::operator++(int) 
+        const PhysicalNumber PhysicalNumber::operator++(int) 
         {
             PhysicalNumber q;
             q.number=this->number+1;
@@ -139,7 +137,7 @@ using namespace ariel;
             this->number--;
             return *this;
         }
-        const PhysicalNumber& PhysicalNumber::operator--(int)
+        const PhysicalNumber PhysicalNumber::operator--(int)
         {
             PhysicalNumber q;
             q.number=this->number-1;
@@ -243,7 +241,7 @@ using namespace ariel;
         }
 
 
-   PhysicalNumber& PhysicalNumber::convert(const PhysicalNumber &pn) const
+   PhysicalNumber PhysicalNumber::convert(const PhysicalNumber &pn) const
     {
             // need to do isSame()?
         PhysicalNumber newPN;
