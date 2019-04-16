@@ -102,7 +102,8 @@ int main() {
     .CHECK_OK((a++)) // still 1.9998
     .CHECK_OUTPUT(a, "2.9998[km]") // now is 2.9998
     .CHECK_OK((a--)) // still 2.9998
-    .CHECK_OUTPUT(a, "1.9998[km]") // now is 1.9998
+    .CHECK_OK((a--)) // still 2.9998
+    .CHECK_OUTPUT(a, "0.9998[km]") // now is 1.9998
 
 //////////////////////////////////////////////
 

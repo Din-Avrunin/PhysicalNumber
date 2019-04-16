@@ -1,4 +1,3 @@
-
 #include "PhysicalNumber.h"
 #include "Unit.h"
 #include <string>
@@ -114,16 +113,13 @@ bool PhysicalNumber::isSameGroup(const Unit &otherUnit) const
 
         PhysicalNumber& PhysicalNumber::operator++()
         {
-            this->number++;
+            number++;
             return *this;
         }
-        const PhysicalNumber PhysicalNumber::operator++(int) 
+        PhysicalNumber PhysicalNumber::operator++(int) 
         {
-            PhysicalNumber q;
-            q.number=this->number+1;
-            q.unit=unit;
-           
-            return q;
+            number++;
+            return *this;
         }
         PhysicalNumber PhysicalNumber::operator-(const PhysicalNumber& pn) const
         {
@@ -144,6 +140,10 @@ bool PhysicalNumber::isSameGroup(const Unit &otherUnit) const
             
             return newPN; 
         }
+        PhysicalNumber PhysicalNumber::operator+() const
+        {
+            return *this;
+        }    
         PhysicalNumber& PhysicalNumber::operator-=(const PhysicalNumber& pn) 
         {
               PhysicalNumber newPN;
@@ -175,16 +175,13 @@ bool PhysicalNumber::isSameGroup(const Unit &otherUnit) const
         }
         PhysicalNumber& PhysicalNumber::operator--()
         {
-            this->number--;
+            number--;
             return *this;
         }
-        const PhysicalNumber PhysicalNumber::operator--(int)
+        PhysicalNumber PhysicalNumber::operator--(int)
         {
-            PhysicalNumber q;
-            q.number=this->number-1;
-            q.unit=this->unit;
-            
-            return q;
+            number--;
+            return *this;
         }
         
         bool PhysicalNumber::operator<(const PhysicalNumber& pn) const
