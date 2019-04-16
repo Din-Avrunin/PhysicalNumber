@@ -247,7 +247,7 @@ using namespace ariel;
         }
 
 
-   PhysicalNumber& PhysicalNumber::convert(const PhysicalNumber &pn) const
+   PhysicalNumber PhysicalNumber::convert(const PhysicalNumber &pn) const
     {
             // need to do isSame()?
         PhysicalNumber newPN;
